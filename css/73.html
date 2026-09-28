@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Functions</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background: #174EA6;
+            color: white;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 6vw, 70px);
+        }
+
+        .container {
+            width: min(90%, 900px);
+            margin: 30px auto;
+        }
+
+        .card {
+            width: max(250px, 50%);
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: clamp(16px, 2vw, 24px);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CSS Functions</h1>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>clamp()</h2>
+        <p>
+            Controls a value between a minimum and maximum size.
+        </p>
+
+        <h2>min()</h2>
+        <p>
+            Selects the smaller value.
+        </p>
+
+        <h2>max()</h2>
+        <p>
+            Selects the larger value.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q9 - Object Fit</title>
+    <style>
+        body{text-align:center;font-family:Arial}
+        .gallery{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+        img{width:220px;height:160px;border:3px solid #174ea6}
+        .cover{object-fit:cover}
+        .contain{object-fit:contain}
+        .fill{object-fit:fill}
+        .top{object-fit:cover;object-position:top}
+    </style>
+</head>
+<body>
+    <h1>Object Fit and Object Position</h1>
+
+    <div class="gallery">
+        <div>
+            <img class="cover" src="https://picsum.photos/500/300?5">
+            <p>Cover</p>
+        </div>
+
+        <div>
+            <img class="contain" src="https://picsum.photos/500/300?6">
+            <p>Contain</p>
+        </div>
+
+        <div>
+            <img class="fill" src="https://picsum.photos/500/300?7">
+            <p>Fill</p>
+        </div>
+
+        <div>
+            <img class="top" src="https://picsum.photos/500/300?8">
+            <p>Position Top</p>
+        </div>
+    </div>
+</body>
+</html>

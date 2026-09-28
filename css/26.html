@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inheritance and Specificity</title>
+
+    <style>
+        /* Inheritance */
+        body {
+            font-family: Arial;
+            color: #333;
+        }
+
+        .box {
+            color: blue;
+            font-size: 18px;
+        }
+
+        /* Specificity */
+        p {
+            color: green;
+        }
+
+        .text {
+            color: orange;
+        }
+
+        #special {
+            color: red;
+        }
+
+        p#special {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Inheritance and Specificity</h1>
+
+    <div class="box">
+        <p>This paragraph inherits the font family from body.</p>
+        <p>This paragraph inherits the color from the box.</p>
+    </div>
+
+    <h2>Specificity Example</h2>
+
+    <p>This uses the element selector.</p>
+
+    <p class="text">This uses the class selector.</p>
+
+    <p id="special" class="text">
+        This uses ID and class selectors. ID has higher specificity.
+    </p>
+
+    <p id="special">
+        This selector has the highest specificity: p#special.
+    </p>
+
+</body>
+</html>

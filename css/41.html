@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q6 - Tooltip</title>
+    <style>
+        body{text-align:center;font-family:Arial;padding:100px}
+        .tooltip{
+            display:inline-block;
+            position:relative;
+            background:#174ea6;
+            color:white;
+            padding:15px 25px;
+            border-radius:5px
+        }
+        .text{
+            visibility:hidden;
+            position:absolute;
+            bottom:130%;
+            left:50%;
+            transform:translateX(-50%);
+            background:#333;
+            color:white;
+            padding:10px;
+            width:150px;
+            border-radius:5px
+        }
+        .tooltip:hover .text{visibility:visible}
+    </style>
+</head>
+<body>
+    <h1>CSS Tooltip</h1>
+
+    <div class="tooltip">
+        Hover Me
+        <span class="text">This is a tooltip!</span>
+    </div>
+</body>
+</html>

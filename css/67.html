@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyframe Animation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        h1 {
+            animation: colorChange 3s infinite;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #174EA6;
+            margin: 50px auto;
+            animation: moveBox 3s infinite alternate;
+        }
+
+        @keyframes moveBox {
+            from {
+                transform: translateX(-150px) rotate(0deg);
+            }
+            to {
+                transform: translateX(150px) rotate(360deg);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #174EA6;
+            }
+
+            50% {
+                color: #F4B400;
+            }
+
+            100% {
+                color: #0B5394;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Keyframe Animation</h1>
+
+    <p>The box moves and rotates automatically.</p>
+
+    <div class="box"></div>
+
+</body>
+</html>

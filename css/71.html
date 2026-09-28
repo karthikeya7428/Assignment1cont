@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dark Mode</title>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #222222;
+            --card: #f2f2f2;
+            --primary: #174EA6;
+        }
+
+        body.dark {
+            --bg: #121212;
+            --text: #ffffff;
+            --card: #1e1e1e;
+            --primary: #F4B400;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: var(--bg);
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Dark Mode Website</h1>
+    <button onclick="document.body.classList.toggle('dark')">
+        Toggle Dark Mode
+    </button>
+</header>
+
+<div class="content">
+    <h2>Welcome</h2>
+    <p>This webpage uses CSS variables for light and dark themes.</p>
+
+    <div class="card">
+        <h3>CSS Variables</h3>
+        <p>
+            CSS variables allow us to store and reuse colors,
+            sizes, and other values throughout the webpage.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

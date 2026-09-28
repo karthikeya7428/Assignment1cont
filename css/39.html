@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q4 - Dropdown Menu</title>
+    <style>
+        body{font-family:Arial;margin:0}
+        nav{background:#174ea6;padding:15px}
+        nav a,.dropbtn{color:white;text-decoration:none;padding:15px}
+        .dropdown{display:inline-block;position:relative}
+        .menu{display:none;position:absolute;background:white;width:180px}
+        .menu a{display:block;color:black;padding:12px}
+        .menu a:hover{background:#ddd}
+        .dropdown:hover .menu{display:block}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+
+        <div class="dropdown">
+            <span class="dropbtn">Courses ▼</span>
+            <div class="menu">
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">JavaScript</a>
+            </div>
+        </div>
+
+        <a href="#">Contact</a>
+    </nav>
+</body>
+</html>

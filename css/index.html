@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline, Internal and External CSS</title>
+
+    <!-- Internal CSS -->
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        .internal {
+            color: green;
+            font-size: 20px;
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>CSS Types</h1>
+
+    <!-- Inline CSS -->
+    <p style="color: red; font-size: 20px;">
+        This paragraph uses Inline CSS.
+    </p>
+
+    <p class="internal">
+        This paragraph uses Internal CSS.
+    </p>
+
+    <p class="external">
+        This paragraph uses External CSS.
+    </p>
+
+</body>
+</html>

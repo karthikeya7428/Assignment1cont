@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login and Signup</title>
+<style>
+body{font-family:Arial;background:#eaf1fb;margin:0}
+.container{display:flex;justify-content:center;gap:30px;padding:60px;flex-wrap:wrap}
+form{background:white;padding:30px;width:320px;border-radius:10px;box-shadow:0 3px 10px #bbb}
+h2{text-align:center;color:#174ea6}
+input{width:100%;padding:12px;margin:8px 0;box-sizing:border-box}
+button{width:100%;padding:12px;background:#174ea6;color:white;border:0;border-radius:5px}
+@media(max-width:700px){.container{padding:30px 10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<form>
+<h2>Login</h2>
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Password" required>
+<button>Login</button>
+</form>
+<form>
+<h2>Sign Up</h2>
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<input type="password" placeholder="Password" required>
+<button>Sign Up</button>
+</form>
+</div>
+</body>
+</html>

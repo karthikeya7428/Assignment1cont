@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Only Modal</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #174EA6;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        #open:checked ~ .modal {
+            display: flex;
+        }
+
+        #open {
+            display: none;
+        }
+
+        .close {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #F4B400;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Only Modal</h1>
+
+    <input type="checkbox" id="open">
+
+    <label for="open">
+        <button>Open Popup</button>
+    </label>
+
+    <div class="modal">
+        <div class="modal-content">
+            <h2>Hello!</h2>
+            <p>This is a CSS-only modal popup.</p>
+
+            <label for="open" class="close">Close</label>
+        </div>
+    </div>
+
+</body>
+</html>

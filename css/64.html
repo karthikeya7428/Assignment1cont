@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile First Website</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #0B5394;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0B5394;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        @media (min-width: 600px) {
+            nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Website</h1>
+    <p>Mobile-First Responsive Design</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="content">
+    <h2>Our Services</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Web Design</h3>
+            <p>Creating attractive websites.</p>
+        </div>
+
+        <div class="card">
+            <h3>Development</h3>
+            <p>Building modern web applications.</p>
+        </div>
+
+        <div class="card">
+            <h3>Support</h3>
+            <p>Providing technical support.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>News Blog</title>
+<style>
+body{font-family:Arial;margin:0}
+.container{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding:30px}
+article,aside{padding:25px;background:#f2f5f9}
+h1,h2{color:#174ea6}
+@media(max-width:700px){.container{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header style="background:#174ea6;color:white;padding:25px;text-align:center"><h1>Daily News</h1></header>
+<div class="container">
+<main>
+<article><h2>Technology News</h2><p>Latest developments in technology and innovation.</p></article>
+<article><h2>Education News</h2><p>New trends and developments in education.</p></article>
+<article><h2>Sports News</h2><p>Latest updates from the world of sports.</p></article>
+</main>
+<aside><h2>Categories</h2><p>Technology</p><p>Education</p><p>Sports</p><p>Business</p></aside>
+</div>
+</body>
+</html>

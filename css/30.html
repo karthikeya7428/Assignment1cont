@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Images</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #eee;
+        }
+
+        h1 {
+            text-align: center;
+            color: #174ea6;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .box {
+            height: 250px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
+            border-radius: 10px;
+        }
+
+        .image1 {
+            background-image: url("https://picsum.photos/600/400?random=1");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image2 {
+            background-image: url("https://picsum.photos/600/400?random=2");
+            background-size: cover;
+            background-position: top;
+        }
+
+        .image3 {
+            background-image: url("https://picsum.photos/600/400?random=3");
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .image4 {
+            background-image: url("https://picsum.photos/600/400?random=4");
+            background-size: cover;
+            background-position: right;
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Background Images and Positioning</h1>
+
+    <div class="gallery">
+
+        <div class="box image1">
+            Center Position
+        </div>
+
+        <div class="box image2">
+            Top Position
+        </div>
+
+        <div class="box image3">
+            Bottom Position
+        </div>
+
+        <div class="box image4">
+            Right Position
+        </div>
+
+    </div>
+
+</body>
+</html>

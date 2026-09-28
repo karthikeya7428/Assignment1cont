@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Three Column Layout</title>
+<style>
+body{font-family:Arial;margin:0}
+.container{display:flex;gap:20px;padding:30px}
+.column{flex:1;padding:30px;background:#eaf1fb;text-align:center;border-radius:10px}
+h2{color:#174ea6}
+@media(max-width:700px){.container{flex-direction:column}}
+</style>
+</head>
+<body>
+<h1 style="text-align:center">Three Column Layout</h1>
+<div class="container">
+<div class="column"><h2>HTML</h2><p>Structure of webpages.</p></div>
+<div class="column"><h2>CSS</h2><p>Style of webpages.</p></div>
+<div class="column"><h2>JavaScript</h2><p>Functionality of webpages.</p></div>
+</div>
+</body>
+</html>

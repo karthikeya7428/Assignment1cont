@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D and 3D Transformations</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #174EA6;
+            color: white;
+            font-size: 20px;
+            transition: transform 1s;
+        }
+
+        .two-d:hover {
+            transform: rotate(45deg) scale(1.2);
+        }
+
+        .three-d {
+            transform-style: preserve-3d;
+        }
+
+        .three-d:hover {
+            transform: rotateX(180deg) rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+
+<h1>2D and 3D Transformations</h1>
+
+<div class="container">
+
+    <div>
+        <h2>2D Transform</h2>
+        <div class="box two-d">2D</div>
+        <p>Hover to rotate and scale</p>
+    </div>
+
+    <div>
+        <h2>3D Transform</h2>
+        <div class="box three-d">3D</div>
+        <p>Hover to rotate in 3D</p>
+    </div>
+
+</div>
+
+</body>
+</html>

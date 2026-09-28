@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Spinner</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border: 8px solid #ddd;
+            border-top: 8px solid #174EA6;
+            border-radius: 50%;
+            margin: 50px auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Loading...</h1>
+
+    <div class="spinner"></div>
+
+    <p>Please wait while the page loads.</p>
+
+</body>
+</html>

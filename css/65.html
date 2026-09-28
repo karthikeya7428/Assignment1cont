@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Transitions</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background: #174EA6;
+            margin: 30px auto;
+            transition: all 0.5s ease;
+        }
+
+        .box:hover {
+            width: 250px;
+            height: 200px;
+            background: #F4B400;
+            border-radius: 50%;
+            transform: rotate(10deg);
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #0B5394;
+            color: white;
+            border: none;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #F4B400;
+            color: black;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Transitions</h1>
+
+<div class="box"></div>
+
+<button>Hover Me</button>
+
+<p>Move the mouse over the box and button.</p>
+
+</body>
+</html>
