@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veggalam Karthikeya — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg:#0F1216;
+    --surface:#161B21;
+    --surface-2:#1D242C;
+    --line:#2A323C;
+    --text:#E7EAEE;
+    --muted:#8B95A3;
+    --amber:#E8A33D;
+    --mint:#4FD8A0;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ::selection{ background:var(--amber); color:#0F1216; }
+
+  .wrap{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(15,18,22,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .logo{
+    font-family:var(--font-mono);
+    font-size:15px;
+    color:var(--mint);
+  }
+  .logo span{ color:var(--muted); }
+  nav ul{
+    display:flex; gap:28px; list-style:none;
+    font-family:var(--font-mono);
+    font-size:13px;
+  }
+  nav ul a{
+    color:var(--muted);
+    transition:color .2s;
+  }
+  nav ul a:hover{ color:var(--amber); }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding:88px 0 64px;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--mint);
+    letter-spacing:0.06em;
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px; height:8px;
+    background:var(--mint);
+    border-radius:2px;
+    display:inline-block;
+  }
+  h1.name{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(38px,7vw,64px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    max-width:11ch;
+  }
+  .role-line{
+    font-family:var(--font-mono);
+    font-size:16px;
+    color:var(--amber);
+    margin-top:18px;
+  }
+  .bio{
+    margin-top:22px;
+    max-width:56ch;
+    color:var(--muted);
+    font-size:16px;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--font-mono);
+    font-size:13px;
+    padding:12px 20px;
+    border-radius:6px;
+    border:1px solid var(--line);
+    transition:all .2s;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn.primary{
+    background:var(--amber);
+    color:#0F1216;
+    border-color:var(--amber);
+    font-weight:500;
+  }
+  .btn.primary:hover{ background:#f2b658; }
+  .btn.ghost:hover{ border-color:var(--mint); color:var(--mint); }
+
+  /* ---------- TREE SIGNATURE ---------- */
+  .tree-block{
+    margin-top:64px;
+    padding:28px 24px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    font-family:var(--font-mono);
+    font-size:13.5px;
+    color:var(--muted);
+    overflow-x:auto;
+    white-space:pre;
+    line-height:1.75;
+  }
+  .tree-block .root{ color:var(--text); font-weight:500; }
+  .tree-block .branch{ color:var(--line); }
+  .tree-block .node{ color:var(--mint); }
+  .tree-block .leaf{ color:var(--amber); }
+  .tree-caption{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:10px;
+    opacity:0.7;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:76px 0; border-top:1px solid var(--line); }
+  .sec-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:38px;
+  }
+  .sec-num{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--muted);
+  }
+  .sec-title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:28px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-text{
+    max-width:64ch;
+    color:var(--muted);
+    font-size:16px;
+  }
+  .about-text strong{ color:var(--text); font-weight:500; }
+
+  .facts{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .fact{
+    background:var(--surface);
+    padding:18px 20px;
+  }
+  .fact .k{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  .fact .v{
+    margin-top:6px;
+    font-size:15px;
+    font-weight:500;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skill-groups{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+  }
+  .skill-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:22px;
+  }
+  .skill-card h3{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--mint);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-bottom:14px;
+  }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    padding:6px 11px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    color:var(--text);
+    background:var(--surface-2);
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .project{
+    border:1px solid var(--line);
+    background:var(--surface);
+    border-radius:10px;
+    padding:26px;
+    margin-bottom:18px;
+    transition:border-color .2s;
+  }
+  .project:hover{ border-color:var(--mint); }
+  .project-top{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:16px;
+    flex-wrap:wrap;
+  }
+  .project h3{
+    font-family:var(--font-display);
+    font-size:19px;
+    font-weight:600;
+  }
+  .project-tag{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--amber);
+    border:1px solid var(--amber);
+    padding:3px 9px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+  .project p{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:14.5px;
+    max-width:68ch;
+  }
+  .project .plink{
+    display:inline-block;
+    margin-top:14px;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--mint);
+    border-bottom:1px solid transparent;
+  }
+  .project .plink:hover{ border-color:var(--mint); }
+
+  /* ---------- CERTS ---------- */
+  .cert-list{ list-style:none; }
+  .cert-list li{
+    display:flex; justify-content:space-between; gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+    flex-wrap:wrap;
+  }
+  .cert-list li:last-child{ border-bottom:none; }
+  .cert-list .cname{ color:var(--text); font-weight:500; }
+  .cert-list .corg{ color:var(--muted); font-family:var(--font-mono); font-size:12.5px; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:36px;
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:24px;
+  }
+  .contact-links{ display:flex; flex-direction:column; gap:10px; }
+  .contact-links a{
+    font-family:var(--font-mono);
+    font-size:14.5px;
+    color:var(--text);
+  }
+  .contact-links a:hover{ color:var(--amber); }
+  .contact-links .lbl{ color:var(--muted); margin-right:8px; }
+
+  footer{
+    padding:34px 0 50px;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--muted);
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:640px){
+    .facts{ grid-template-columns:1fr; }
+    .skill-groups{ grid-template-columns:1fr; }
+    .contact-card{ flex-direction:column; align-items:flex-start; }
+    nav ul{ gap:16px; }
+    .tree-block{ font-size:11.5px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">karthikeya<span>.dev</span></div>
+    <ul>
+      <li><a href="#about">about</a></li>
+      <li><a href="#skills">skills</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">available for internships</div>
+    <h1 class="name">Veggalam Karthikeya</h1>
+    <div class="role-line">B.Tech CSE (AI &amp; ML) — Sai University, Chennai</div>
+    <p class="bio">
+      2nd-year Computer Science Engineering student with a strong interest in programming and technology.
+      I work with Python, C, and Data Structures, and I enjoy learning new tools and building projects —
+      currently growing into full-stack development and machine learning.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="resume.pdf" target="_blank">Download Resume</a>
+      <a class="btn ghost" href="https://github.com/karthikeya7428" target="_blank">GitHub ↗️</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/karthikeya-veggalam-92bb582bb" target="_blank">LinkedIn ↗️</a>
+    </div>
+
+    <div class="tree-block">
+<span class="root">karthikeya/</span>
+<span class="branch">├──</span> <span class="node">languages/</span>      <span class="leaf">python · c</span>
+<span class="branch">├──</span> <span class="node">structures/</span>     <span class="leaf">arrays · linked-lists · stacks · queues · trees</span>
+<span class="branch">├──</span> <span class="node">core/</span>           <span class="leaf">problem-solving · debugging · logic</span>
+<span class="branch">├──</span> <span class="node">tools/</span>          <span class="leaf">git · github</span>
+<span class="branch">└──</span> <span class="node">growing/</span>        <span class="leaf">full-stack · machine-learning</span>
+    </div>
+    <div class="tree-caption">// same tree structure used in my restaurant management system project</div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <span class="sec-title">About</span>
+    </div>
+    <p class="about-text">
+      I'm a motivated and hardworking student looking for opportunities to improve my skills and gain
+      practical experience in the software industry. My interests sit at the intersection of
+      <strong>software development</strong>, <strong>AI/ML</strong>, and <strong>full-stack development</strong>,
+      built through academic projects, workshops, and hackathon participation.
+    </p>
+    <div class="facts">
+      <div class="fact">
+        <div class="k">Education</div>
+        <div class="v">B.Tech CSE (AI &amp; ML), 2nd Year</div>
+      </div>
+      <div class="fact">
+        <div class="k">University</div>
+        <div class="v">Sai University, Chennai</div>
+      </div>
+      <div class="fact">
+        <div class="k">Languages spoken</div>
+        <div class="v">English · Telugu · Tamil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <span class="sec-title">Skills</span>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-card">
+        <h3>Programming</h3>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">C</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Data Structures &amp; Algorithms</h3>
+        <div class="chips">
+          <span class="chip">Arrays</span>
+          <span class="chip">Strings</span>
+          <span class="chip">Linked Lists</span>
+          <span class="chip">Stacks</span>
+          <span class="chip">Queues</span>
+          <span class="chip">Searching &amp; Sorting</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Core Skills</h3>
+        <div class="chips">
+          <span class="chip">Problem Solving</span>
+          <span class="chip">Logical Thinking</span>
+          <span class="chip">Debugging</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <div class="chips">
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Soft Skills</h3>
+        <div class="chips">
+          <span class="chip">Communication</span>
+          <span class="chip">Teamwork</span>
+          <span class="chip">Time Management</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Currently Learning</h3>
+        <div class="chips">
+          <span class="chip">Full-Stack Development</span>
+          <span class="chip">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <span class="sec-title">Projects</span>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Movie Recommendation System</h3>
+        <span class="project-tag">Python</span>
+      </div>
+      <p>A Python-based project that recommends movies, built to apply core programming and logic-building concepts.</p>
+      <a class="plink" href="https://www.linkedin.com/posts/karthikeya-veggalam-92bb582bb_python-pythonproject-movierecommendationsystem-activity-7464709445621616640-puEh" target="_blank">View post ↗️</a>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Restaurant Management System</h3>
+        <span class="project-tag">C</span>
+      </div>
+      <p>A menu-driven restaurant management system in C, built around a menu category tree with CRUD operations using structures, dynamic memory allocation, and functions — applying tree-based data organization and searching concepts.</p>
+      <a class="plink" href="https://www.linkedin.com/posts/karthikeya-veggalam-92bb582bb_datastructures-cprogramming-dsa-activity-7455318519333896192-oITP" target="_blank">View post ↗️</a>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Event Management System</h3>
+        <span class="project-tag">C</span>
+      </div>
+      <p>A C console application to add, display, and search event information — using arrays of structures and a menu-driven interface to manage event name, date, and venue.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <span class="sec-title">Certifications &amp; Workshops</span>
+    </div>
+    <ul class="cert-list">
+      <li>
+        <span class="cname">Building Generative AI Apps to Talk to Your Data</span>
+        <span class="corg">GeeksforGeeks — Course Completion</span>
+      </li>
+      <li>
+        <span class="cname">Python Full-Stack Workshop</span>
+        <span class="corg">Think Champ — Certificate of Participation</span>
+      </li>
+      <li>
+        <span class="cname">Ctrl C + Ctrl V Hackathon</span>
+        <span class="corg">FOSS Club, Sai University — Certificate of Participation</span>
+      </li>
+      <li>
+        <span class="cname">Trust and Security with Google Cloud</span>
+        <span class="corg">Simplilearn / SkillUp — Declaration of Completion</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <span class="sec-title">Contact</span>
+    </div>
+    <div class="contact-card">
+      <div class="contact-links">
+        <a href="mailto:karthikeyav190@gmail.com"><span class="lbl">email</span>karthikeyav190@gmail.com</a>
+        <a href="tel:+917337393600"><span class="lbl">phone</span>+91 73373 93600</a>
+        <a href="https://www.linkedin.com/in/karthikeya-veggalam-92bb582bb" target="_blank"><span class="lbl">linkedin</span>karthikeya-veggalam</a>
+        <a href="https://github.com/karthikeya7428" target="_blank"><span class="lbl">github</span>karthikeya7428</a>
+      </div>
+      <a class="btn primary" href="resume.pdf" target="_blank">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  built by Veggalam Karthikeya · hosted on GitHub Pages
+</footer>
+
+</body>
+</html>
