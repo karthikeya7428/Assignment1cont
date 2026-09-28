@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callbacks Promises Async Await</title>
+</head>
+<body>
+
+    <h1>Callbacks, Promises and Async/Await</h1>
+
+    <button onclick="runExamples()">Run</button>
+
+    <p id="output"></p>
+
+    <script>
+        function callbackExample(callback) {
+            setTimeout(function () {
+                callback("Callback completed");
+            }, 1000);
+        }
+
+        function promiseExample() {
+            return new Promise(function (resolve) {
+                setTimeout(function () {
+                    resolve("Promise completed");
+                }, 1000);
+            });
+        }
+
+        async function asyncExample() {
+            let result = await promiseExample();
+            return result;
+        }
+
+        function runExamples() {
+            callbackExample(function (message) {
+                document.getElementById("output").innerHTML +=
+                    message + "<br>";
+            });
+
+            promiseExample().then(function (message) {
+                document.getElementById("output").innerHTML +=
+                    message + "<br>";
+            });
+
+            asyncExample().then(function (message) {
+                document.getElementById("output").innerHTML +=
+                    "Async/Await: " + message;
+            });
+        }
+    </script>
+
+</body>
+</html>

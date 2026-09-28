@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Login Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .login {
+            width: 90%;
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #174EA6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0B5394;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 500px) {
+            .login {
+                margin-top: 40px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login">
+        <h1>Login</h1>
+
+        <form onsubmit="return validateForm()">
+
+            <input type="text" id="username" placeholder="Username">
+
+            <input type="email" id="email" placeholder="Email">
+
+            <input type="password" id="password" placeholder="Password">
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function validateForm() {
+
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let message = document.getElementById("message");
+
+            if (username === "") {
+                message.innerText = "Username is required";
+                message.style.color = "red";
+                return false;
+            }
+
+            if (email === "") {
+                message.innerText = "Email is required";
+                message.style.color = "red";
+                return false;
+            }
+
+            if (password.length < 6) {
+                message.innerText = "Password must contain at least 6 characters";
+                message.style.color = "red";
+                return false;
+            }
+
+            message.innerText = "Login successful!";
+            message.style.color = "green";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

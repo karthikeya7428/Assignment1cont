@@ -1,0 +1,85 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter Application</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f4f4f4;
+            padding: 50px;
+        }
+
+        .counter {
+            width: 300px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        #count {
+            font-size: 50px;
+            color: #174EA6;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 5px;
+            border: none;
+            color: white;
+            background: #174EA6;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0B5394;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="counter">
+
+    <h2>Counter Application</h2>
+
+    <div id="count">0</div>
+
+    <button onclick="decrement()">−</button>
+
+    <button onclick="reset()">Reset</button>
+
+    <button onclick="increment()">+</button>
+
+</div>
+
+<script>
+    let count = 0;
+
+    function increment() {
+        count++;
+        updateCounter();
+    }
+
+    function decrement() {
+        count--;
+        updateCounter();
+    }
+
+    function reset() {
+        count = 0;
+        updateCounter();
+    }
+
+    function updateCounter() {
+        document.getElementById("count").innerHTML = count;
+    }
+</script>
+
+</body>
+</html>
+```

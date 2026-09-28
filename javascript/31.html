@@ -1,0 +1,110 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        form {
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #174EA6;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    <input type="text" id="name" placeholder="Enter Name">
+
+    <input type="email" id="email" placeholder="Enter Email">
+
+    <input type="text" id="phone" placeholder="Enter 10-digit Phone Number">
+
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <button type="submit">Submit</button>
+
+    <p id="message"></p>
+
+</form>
+
+<script>
+    function validateForm() {
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let password = document.getElementById("password").value;
+
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let phonePattern = /^[0-9]{10}$/;
+
+        if (name == "") {
+            showMessage("Please enter your name.", "red");
+            return false;
+        }
+
+        if (!emailPattern.test(email)) {
+            showMessage("Please enter a valid email.", "red");
+            return false;
+        }
+
+        if (!phonePattern.test(phone)) {
+            showMessage("Phone number must contain 10 digits.", "red");
+            return false;
+        }
+
+        if (password.length < 6) {
+            showMessage("Password must contain at least 6 characters.", "red");
+            return false;
+        }
+
+        showMessage("Form submitted successfully!", "green");
+
+        return false;
+    }
+
+    function showMessage(text, color) {
+        let message = document.getElementById("message");
+        message.innerHTML = text;
+        message.style.color = color;
+    }
+</script>
+
+</body>
+</html>
+```

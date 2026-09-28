@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classes and Objects</title>
+</head>
+<body>
+
+    <h1>Classes and Objects</h1>
+
+    <p id="output"></p>
+
+    <script>
+        class Student {
+            constructor(name, age, course) {
+                this.name = name;
+                this.age = age;
+                this.course = course;
+            }
+
+            display() {
+                return `Name: ${this.name}<br>
+                        Age: ${this.age}<br>
+                        Course: ${this.course}`;
+            }
+        }
+
+        let student1 = new Student(
+            "Karthikeya",
+            20,
+            "Computer Science"
+        );
+
+        document.getElementById("output").innerHTML =
+            student1.display();
+    </script>
+
+</body>
+</html>

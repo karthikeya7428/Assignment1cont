@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Common Elements</title>
+</head>
+<body>
+
+    <h1>Common Elements in Two Arrays</h1>
+
+    <input type="text" id="array1"
+        placeholder="1,2,3,4">
+
+    <br><br>
+
+    <input type="text" id="array2"
+        placeholder="3,4,5,6">
+
+    <br><br>
+
+    <button onclick="findCommon()">Find Common</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findCommon() {
+            let arr1 = document.getElementById("array1").value
+                .split(",").map(Number);
+
+            let arr2 = document.getElementById("array2").value
+                .split(",").map(Number);
+
+            let common = arr1.filter(
+                value => arr2.includes(value)
+            );
+
+            common = [...new Set(common)];
+
+            document.getElementById("result").innerText =
+                "Common Elements: " + common.join(", ");
+        }
+    </script>
+
+</body>
+</html>

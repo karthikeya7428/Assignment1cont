@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ES6 Features</title>
+</head>
+<body>
+
+    <h1>ES6 Features</h1>
+
+    <p id="output"></p>
+
+    <script>
+        let name = "Karthikeya";
+        const college = "Sai University";
+
+        let age = 20;
+
+        let message = `My name is ${name}, I am ${age} years old and I study at ${college}.`;
+
+        let student = {
+            name: "Karthikeya",
+            course: "Computer Science"
+        };
+
+        let { name: studentName, course } = student;
+
+        document.getElementById("output").innerHTML =
+            message + "<br><br>" +
+            "Destructuring:<br>" +
+            "Name: " + studentName + "<br>" +
+            "Course: " + course;
+    </script>
+
+</body>
+</html>

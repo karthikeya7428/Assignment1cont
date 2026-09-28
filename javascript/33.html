@@ -1,0 +1,139 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .quiz {
+            width: 450px;
+            max-width: 90%;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #174EA6;
+            background: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e8f0fe;
+        }
+
+        #next {
+            background: #174EA6;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="quiz">
+
+    <h2>JavaScript Quiz</h2>
+
+    <h3 id="question"></h3>
+
+    <div id="options"></div>
+
+    <button id="next" onclick="nextQuestion()">Next</button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+    let questions = [
+        {
+            question: "Which keyword is used to declare a variable?",
+            options: ["var", "print", "display", "write"],
+            answer: "var"
+        },
+        {
+            question: "Which symbol is used for comments in JavaScript?",
+            options: ["//", "##", "<!--", "**"],
+            answer: "//"
+        },
+        {
+            question: "Which method displays output in the browser console?",
+            options: ["console.log()", "print()", "display()", "write()"],
+            answer: "console.log()"
+        }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function loadQuestion() {
+
+        document.getElementById("question").innerHTML =
+            questions[current].question;
+
+        let options = document.getElementById("options");
+        options.innerHTML = "";
+
+        questions[current].options.forEach(function(option) {
+
+            let button = document.createElement("button");
+
+            button.innerHTML = option;
+
+            button.onclick = function() {
+                checkAnswer(option);
+            };
+
+            options.appendChild(button);
+        });
+    }
+
+    function checkAnswer(answer) {
+
+        if (answer == questions[current].answer) {
+            score++;
+            alert("Correct!");
+        } else {
+            alert("Wrong answer!");
+        }
+    }
+
+    function nextQuestion() {
+
+        current++;
+
+        if (current < questions.length) {
+            loadQuestion();
+        } else {
+            document.getElementById("question").innerHTML =
+                "Quiz Completed!";
+
+            document.getElementById("options").innerHTML = "";
+
+            document.getElementById("next").style.display = "none";
+
+            document.getElementById("result").innerHTML =
+                "Your Score: " + score + " / " + questions.length;
+        }
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
+```

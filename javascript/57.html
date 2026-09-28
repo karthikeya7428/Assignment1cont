@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Second Largest Element</title>
+</head>
+
+<body>
+
+    <h1>Second Largest Element</h1>
+
+    <input
+        type="text"
+        id="array"
+        placeholder="Enter numbers: 10,20,30,40"
+    >
+
+    <button onclick="findSecondLargest()">
+        Find
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+        function findSecondLargest() {
+
+            let input = document.getElementById("array").value;
+
+            let arr = input
+                .split(",")
+                .map(Number);
+
+            let unique = [...new Set(arr)];
+
+            if (unique.length < 2) {
+                document.getElementById("result").innerText =
+                    "Enter at least two different numbers";
+                return;
+            }
+
+            unique.sort(function(a, b) {
+                return b - a;
+            });
+
+            let secondLargest = unique[1];
+
+            document.getElementById("result").innerText =
+                "Second Largest = " + secondLargest;
+        }
+    </script>
+
+</body>
+</html>

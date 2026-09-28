@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GCD of Two Numbers</title>
+</head>
+
+<body>
+
+    <h1>GCD Calculator</h1>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <br><br>
+
+    <input type="number" id="num2" placeholder="Enter second number">
+    <br><br>
+
+    <button onclick="findGCD()">Find GCD</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findGCD() {
+
+            let a = Math.abs(
+                Number(document.getElementById("num1").value)
+            );
+
+            let b = Math.abs(
+                Number(document.getElementById("num2").value)
+            );
+
+            while (b !== 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            document.getElementById("result").innerText =
+                "GCD = " + a;
+        }
+    </script>
+
+</body>
+</html>
